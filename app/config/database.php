@@ -1,7 +1,7 @@
 <?php
 
 $host = 'localhost';
-$dbname = 'angola_preco_justo';
+$dbname = 'precos_angola';
 $user = 'root';
 $pass = ''; // O XAMPP no Mac geralmente usa o usuário root sem senha
 
