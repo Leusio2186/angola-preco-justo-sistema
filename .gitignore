@@ -1,0 +1,13 @@
+# Sistema
+.DS_Store
+
+# Configurações locais
+.env
+
+# Logs
+storage/logs/*
+!storage/logs/.gitkeep
+
+# Uploads
+public/uploads/*
+storage/uploads/*
