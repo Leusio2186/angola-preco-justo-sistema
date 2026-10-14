@@ -1,0 +1,770 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-familv-main)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* =========================================
+     CORES PRINCIPAIS DA MARCA
+     ========================================= */
+  --color-primary: #0056D2;       /* Azul vibrante (Botões "Pesquisar", "Comparar", "Adicionar Produto") */
+  --color-primary-dark: #0A192F;  /* Azul muito escuro (Área do Hero no topo e Sidebar do Painel) */
+  --color-primary-light: #E8F0FE; /* Azul super claro (Fundo de abas ativas ou botões secundários) */
+  
+  /* =========================================
+     CORES DE SUCESSO, ALERTA E FEEDBACK
+     ========================================= */
+  --color-success: #00A650;       /* Verde principal (Botão "Registar Preço", tag "Melhor Preço", ícones de subida) */
+  --color-success-bg: #E6F6EC;    /* Fundo clarinho das tags verdes */
+  --color-danger: #EF4444;        /* Vermelho (Setas de descida de preço, ícone de apagar produto) */
+  --color-warning: #F59E0B;       /* Laranja/Amarelo (Estrelas de classificação e gráficos) */
+
+  /* =========================================
+     TEXTOS E TIPOGRAFIA
+     ========================================= */
+  --color-text-main: #1F2937;     /* Cor principal do texto (Títulos, nomes de supermercados e produtos) */
+  --color-text-muted: #6B7280;    /* Texto secundário (Datas, categorias menores, distâncias em km) */
+  
+  /* =========================================
+     FUNDOS E ESTRUTURA (BACKGROUNDS & BORDERS)
+     ========================================= */
+  --color-background: #F4F7F6;    /* Cor de fundo geral da página e do painel (cinza muito claro) */
+  --color-surface: #FFFFFF;       /* Fundo branco puro (Cartões de produtos, tabelas e barra de pesquisa) */
+  --color-border: #E5E7EB;        /* Linhas cinzas suaves (Divisões de tabelas e bordas dos cartões) */
+
+  --color-footer: #0f172a;
+  --font-familv-main: 'Inter', sans-serif;
+}
+
+body {
+    font-family: var(--font-familv-main);
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+}
+
+
+/* Apartir daqui estamos na Navbar*/
+#nav {
+    width: 100%;
+    background-color: var(--color-surface);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    gap: 16rem;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav_left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5rem;
+}
+
+.nav_left img {
+    width: 120px;
+    height: 90px;
+}
+
+.nav_left ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style-type: none;
+    gap: 2rem;
+}
+.nav_left ul li a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav_left li a:hover {
+    color: #0058d28b;
+}
+
+.nav_right {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+}
+
+.nav_right a {
+    text-decoration: none;
+    color:var(--color-primary);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.nav_right a:hover {
+    color: #0058d28b;
+
+}
+
+.nav_right button {
+    width: 125px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.nav_right .button_1 {
+    background-color: rgba(220, 216, 216, 0.519);
+    color: black;
+    transition: background 0.5s ease;
+}
+.nav_right .button_1:hover {
+    color: white;
+    background-color: var(--color-primary);
+}
+
+.nav_right .button_2 {
+    background-color: var(--color-primary);
+    color: white;
+    transition: background 0.5s ease;
+}
+.nav_right .button_2:hover {
+    color: black;
+    background-color: rgba(220, 216, 216, 0.519);
+}
+
+
+/* Apartir daqui estamos na seção do meio onde está o nome e a imagem de fundo*/
+#meio {
+    background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)),
+     url('../images/pexels-zeca-souza-227261917-12039470.jpg') center/cover;
+    padding: 70px 60px 10px 60px;
+    color: var(--color-primary-light);
+}
+
+#meio .container h1 {
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+#meio .container p {
+    color: var(--color-background);
+    margin-bottom: 10px;
+}
+
+#container_1 {
+    width: 1000px;
+    background-color: var(--color-surface);
+    color: var(--color-text-main);
+    border-radius: 6px;
+    padding: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.search-form-grid {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.container_input, .container_seletor1, .container_seletor2 {
+    background-color: var(--color-surface);
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1;
+}
+
+.container_input input, .container_seletor1 select, .container_seletor2 select {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 14px;
+    background: transparent;
+    font-family: var(--font-familv-main);
+    color: var(--color-text-main);
+}
+
+.container_input svg {
+    color: var(--color-text-muted);
+}
+
+
+.container_button {
+    background-color: var(--color-primary);
+    font-family: var(--font-familv-main);
+    color: var(--color-surface);
+    padding: 10px 34px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 6px;
+    border: none;
+    font-size: small;
+    outline: none;
+    gap: 8px;
+    transition: background 0.5s ease-in;
+    cursor: pointer;
+    font-size: 14px;
+}
+.container_button:hover {
+    background-color: #0058d2e5;
+}
+
+
+
+/* Apartir daqui estamos na seção do meio onde estão os cards de seleção de categoria*/
+
+#button_cards {
+    background-color: var(--color-background);
+    width: 100%;
+    max-width: 1000px;
+    padding: 10px 60px;
+    display: grid;
+    grid-row: auto;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+#button_cards button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 10px 20px;
+    border: 1px solid var(--color-border);
+    outline: none;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    color: var(--color-text-main);
+    gap: 4px;
+}
+#button_cards button:hover {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+
+
+
+/* Apartir daqui estamos na seção do meio onde estão os destaques, mapas, variação de preços, top 5 produtos e Contrinua*/
+@media (max-width: 992px) {
+    #meio_principal {
+        grid-template-columns: 1fr;
+    }
+    #meio_1, #meio_2 {
+        grid-column: span 1;
+    }
+}
+
+#meio_principal {
+    max-width: 1450px;
+    border-radius: 8px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    padding: 5px 60px 20px 60px;
+}
+
+/* Apartir daqui estamos nos blocos individuais*/
+
+#meio_1, #meio_2, #meio_3, #meio_4, #contribua_precos {
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+/* Distribuição de Colunas no Grid */
+#meio_1 { grid-column: span 2; }
+#meio_2 { grid-column: span 1; }
+#meio_3 { grid-column: span 1; }
+#meio_4 { grid-column: span 1; }
+#contribua_precos { 
+    grid-column: span 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Cabeçalhos Internos das Caixas */
+.sub_1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.sub_2 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sub_1 h2, .sub_1 h3 {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.sub_1 a {
+    font-size: 13px;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+}
+
+.sub_1 a:hover {
+    color: var(--color-primary-dark);
+}
+
+.sub_2 #svg1{ color: var(--color-success)}
+
+.sub_2 #svg2{ color: var(--color-warning)}
+
+.sub_2 #svg3{ color: var(--color-primary)}
+
+.sub_2 #svg4{ color: var(--color-danger)}
+
+#svg_2 {
+    text-align: center;
+    align-items: center;
+    width: 12px;
+    height: 12px;
+}
+
+/* Apartir daqui estamos no 1 card do meio (Produtos em Destaque)*/
+
+/* --- TABELA DE PRODUTOS EM DESTAQUE --- */
+.tabela-destaques-container {
+    overflow-x: auto;
+}
+
+.tabela-produtos {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    text-align: left;
+}
+
+.tabela-produtos th {
+    color: #94a3b8;
+    font-weight: 600;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.tabela-produtos td {
+    padding: 12px 0;
+    border-bottom: 1px solid #f8fafc;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.prod-td-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.img-produto-tabela {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.btn-comparar {
+    background: #2563eb;
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn-comparar:hover {
+    background: #1d4ed8;
+}
+
+
+/* Apartir daqui estamos no 2 card do meio (Mini Mapa)*/
+
+/* --- LOJAS PRÓXIMAS & MINI MAPA --- */
+.mini_mapa {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    z-index: 1;
+}
+
+.loja-item-lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #f8fafc;
+    font-size: 13px;
+}
+
+.loja-item-lista strong {
+    color: #0f172a;
+    display: block;
+}
+
+.loja-item-lista span {
+    color: #64748b;
+    font-size: 11px;
+}
+
+.loja-distancia {
+    color: #059669;
+    font-weight: 600;
+    font-size: 12px;
+}
+
+/* Apartir daqui estamos no 3 card do meio (Variação de Precos)*/
+/* --- GRÁFICO --- */
+.variacao_preco {
+    position: relative;
+    height: 160px;
+}
+
+.variacao_lojas h3 {
+    font-size: 13px;
+    font-weight: 600;
+    color: #64748b;
+    margin-top: 15px;
+}
+
+
+
+/* Apartir daqui estamos no 4 card do meio (Produtos Mais Pesquisados)*/
+
+/* --- PRODUTOS MAIS PESQUISADOS --- */
+.top-produto-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 2px solid var(--color-border);
+    font-size: 13px;
+}
+
+.badge-pos {
+    background: #fef3c7;
+    color: #d97706;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin-right: 6px;
+}
+
+.text-muted {
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+
+/* Apartir daqui estamos no 5 card do meio (Contribua com os preços)*/
+
+#contribua_precos {
+    padding: 10px;
+    background-color: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+
+}
+
+#Card_principal {
+    background-color: #3fbe7c35;
+    border: none;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: start;
+    gap: 20px;
+    margin-bottom: 10px;
+    padding: 20px;
+}
+
+#Card_principal img {
+    width: 120px;
+    height: 120px;
+}
+
+#Subcard_principal h3 {
+    font-size: medium;
+    margin-bottom: 10px;
+}
+
+#Subcard_principal p {
+    font-size: small;
+}
+#Subcard_principal a {
+    text-decoration: none;
+}
+
+#Subcard_principal .p1 {
+    margin-bottom: 3px;
+}
+#Subcard_principal .p2 {
+    margin-bottom: 15px;
+}
+
+#Subcard_principal a {
+    width: 140px;
+    font-size: 13px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background-color: var(--color-success);
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 8px 15px;
+    color: var(--color-surface);
+    gap: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+#Subcard_principal a:hover {
+    transform: translateY(-3px);
+    background-color: #00a650eb;
+}
+
+#Subcard_principal a svg {
+    width: 15px;
+    height: 15px;
+}
+
+#Cards {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 1em;
+}
+
+.Cards_1, .Cards_2, .Cards_3{
+    width: 100%;
+    border: 2px solid var(--color-border);
+    border-radius: 6px;
+    padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+}
+
+.Cards_1 svg{
+    width: 25px;
+    height: 25px;
+    color: var(--color-primary);
+}
+
+.Cards_1 h1{
+    color: var(--color-text-main);
+    font-size: medium;
+}
+.Cards_1 p{
+    font-size: 10px;
+}
+
+
+.Cards_2 svg{
+    width: 25px;
+    height: 25px;
+    color: var(--color-primary);
+}
+
+.Cards_2 h1{
+    color: var(--color-text-main);
+    font-size: medium;
+}
+.Cards_2 p{
+    font-size: 10px;
+}
+
+
+.Cards_3 svg{
+    width: 25px;
+    height: 25px;
+    color: var(--color-primary);
+}
+
+.Cards_3 h1{
+    color: var(--color-text-main);
+    font-size: medium;
+}
+.Cards_3 p{
+    font-size: 10px;
+}
+
+
+/* Apartir daqui estamos no Footer*/
+
+#footer {
+    background-color: var(--color-footer);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 15px;
+}
+
+.footer_img img{
+    width: 150px;
+    height: 100px;
+}
+
+.footer_links1 {
+    color: var(--color-success-bg);
+}
+
+.footer_links1 h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer_links1 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-primary);
+    list-style: none;
+}
+.footer_links1 ul li a{
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--color-surface);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.footer_links1 ul li a:hover {
+    color: var(--color-primary);
+}
+
+.footer_links2 {
+    color: var(--color-success-bg);
+    margin-bottom: 15px;
+}
+
+.footer_links2 h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer_links2 ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    color: var(--color-primary);
+    list-style: none;
+}
+.footer_links2 ul li a{
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--color-surface);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.footer_links2 ul li a:hover {
+    color: var(--color-primary);
+}
+
+
+.footer_links3 {
+    color: var(--color-success-bg);
+}
+
+.footer_links3 h3 {
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.footer_links3 ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    color: var(--color-primary);
+    list-style: none;
+}
+.footer_links3 ul li a svg{
+    width: 25px;
+    height: 25px;
+    fill: var(--color-surface);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.footer_links3 ul li a svg:hover {
+    fill: var(--color-primary);
+}
+
+.footer_baixo {
+    background-color: #090d16;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    font-size: 13px;
+    padding: 5px 15px;
+}
+
+.footer_baixo p {
+    color: var(--color-success-bg);
+}
+
+
+/* --- RESPONSIVIDADE (Telemóveis e Tablets) --- */
+@media (max-width: 1024px) {
+    #meio_principal {
+        grid-template-columns: 1fr;
+    }
+    #meio_1, #meio_2, #meio_3, #meio_4, #contribua_precos {
+        grid-column: span 1;
+    }
+    #footer {
+        grid-template-columns: 1fr 1fr;
+        padding: 30px 20px;
+    }
+    #nav {
+        padding: 12px 20px;
+    }
+    .nav_left ul {
+        display: none; /* Oculta menu em telas pequenas se necessário */
+    }
+    .search-form-grid {
+        flex-direction: column;
+    }
+}

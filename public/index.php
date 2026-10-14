@@ -1,10 +1,12 @@
 <?php
-// Inicia a sessão do utilizador (necessário para manter o utilizador logado)
 session_start();
 
-// Carrega as configurações principais e a base de dados
-require_once __DIR__ . '/../app/config/config.php';
-require_once __DIR__ . '/../app/config/database.php';
+// Define a raiz do projeto de forma limpa
+define('ROOT_PATH', dirname(__DIR__));
 
-// Carrega o sistema de rotas que vai decidir qual ecrã mostrar
-require_once __DIR__ . '/../routes/web.php';
+// Carrega configurações e base de dados
+require_once ROOT_PATH . '/app/config/config.php';
+require_once ROOT_PATH . '/app/config/database.php';
+
+// Carrega o gestor de rotas
+require_once ROOT_PATH . '/routes/web.php';

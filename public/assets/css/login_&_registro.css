@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-familv-main)
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* =========================================
+     CORES PRINCIPAIS DA MARCA
+     ========================================= */
+  --color-primary: #0056D2;       /* Azul vibrante (Botões "Pesquisar", "Comparar", "Adicionar Produto") */
+  --color-primary-dark: #0A192F;  /* Azul muito escuro (Área do Hero no topo e Sidebar do Painel) */
+  --color-primary-light: #E8F0FE; /* Azul super claro (Fundo de abas ativas ou botões secundários) */
+  
+  /* =========================================
+     CORES DE SUCESSO, ALERTA E FEEDBACK
+     ========================================= */
+  --color-success: #00A650;       /* Verde principal (Botão "Registar Preço", tag "Melhor Preço", ícones de subida) */
+  --color-success-bg: #E6F6EC;    /* Fundo clarinho das tags verdes */
+  --color-danger: #EF4444;        /* Vermelho (Setas de descida de preço, ícone de apagar produto) */
+  --color-warning: #F59E0B;       /* Laranja/Amarelo (Estrelas de classificação e gráficos) */
+
+  /* =========================================
+     TEXTOS E TIPOGRAFIA
+     ========================================= */
+  --color-text-main: #1F2937;     /* Cor principal do texto (Títulos, nomes de supermercados e produtos) */
+  --color-text-muted: #6B7280;    /* Texto secundário (Datas, categorias menores, distâncias em km) */
+  
+  /* =========================================
+     FUNDOS E ESTRUTURA (BACKGROUNDS & BORDERS)
+     ========================================= */
+  --color-background: #F4F7F6;    /* Cor de fundo geral da página e do painel (cinza muito claro) */
+  --color-surface: #FFFFFF;       /* Fundo branco puro (Cartões de produtos, tabelas e barra de pesquisa) */
+  --color-border: #E5E7EB;        /* Linhas cinzas suaves (Divisões de tabelas e bordas dos cartões) */
+
+  --color-footer: #0f172a;
+  --font-familv-main: 'Inter', sans-serif;
+}
+
+body {
+    background: linear-gradient(rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.78)), url('../images/pexels-tubarones-16337696.jpg') center/cover;
+    font-family: var(--font-familv-main);
+    color: var(--color-surface);
+}
+
+/* Link voltar a pagina inicial */
+.caixa_top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.caixa_top a {
+    color: var(--color-surface);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.caixa_top a:hover {
+    color: var(--color-primary);
+} 
+
+
+/* fomulario Completo login com Registo*/
+#container {
+    max-width: 450px;
+    max-height: 700px;
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 8px;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+.container_principal {
+    width: 100%;
+    height: 100%;
+}
+
+
+.container_top {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container_top img {
+    width: 150px;
+    height: 100px;
+}
+
+.container_top h2 {
+    font-size: 20px;
+}
+
+.container_top p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+
+
+#container_form {
+    border: 2px solid var(--color-danger);
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+    border: none;
+}
+
+.caixa_1, .caixa_2, .caixa_3, .caixa_4, .caixa_5 {
+    background-color: var(--color-surface);
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    text-align: center;
+    border: 2px solid var(--color-border);
+    padding: 5px;
+    border-radius: 6px;
+    gap: 1px;
+}
+
+.caixa_1 input, .caixa_2 input, .caixa_3 input, .caixa_4 input, .caixa_5 input {
+    outline: none;
+    width: 100%;
+}
+.caixa_1 svg, .caixa_2 svg, .caixa_3 svg, .caixa_4 svg, .caixa_5 svg {
+    color: var(--color-text-muted);
+}
+#container_form p {
+    color: var(--color-surface);
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+#container_form p a{
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--color-surface);
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+#container_form p a:hover {
+    color: var(--color-primary);
+}
+#container_form button{
+    width: 100%;
+    padding: 12px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+}
+#container_form button:hover {
+    cursor: pointer;
+    background-color: #013d7e;
+    transform: translateY(-3px);
+}
+
+
+
+.container_down {
+    display: flex;
+    flex-direction: column;
+}
+.container_down span {
+    color: var(--color-surface);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+
+.svg {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+}
+.svg ul{
+    list-style: none;
+}
+
+.p_final {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: var(--color-surface);
+    text-decoration: none;
+    gap: 10px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+.p_final a {
+    
+    color: var(--color-surface);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.p_final a:hover {
+    color: #013d7e;
+}
