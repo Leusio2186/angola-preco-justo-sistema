@@ -11,3 +11,5 @@ storage/logs/*
 # Uploads
 public/uploads/*
 storage/uploads/*
+
+/vendor/

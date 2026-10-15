@@ -1,10 +1,20 @@
+<?php
+
+/**
+ *  @var array $title
+ *  @var array $products3
+ */
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-AO">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo APP_NAME; ?> - Início</title>
-    <link rel="stylesheet" href="<?php echo APP_URL; ?>/public/assets/css/style.css">
+    <link rel="stylesheet" href="<?php echo APP_URL; ?>/assets/css/style.css">
     <style>
         .nav-links a {
             color: white;
@@ -13,11 +23,15 @@
             font-weight: bold;
             padding: 8px 15px;
             border-radius: 4px;
-            background-color: rgba(255,255,255,0.2);
+            background-color: rgba(255, 255, 255, 0.2);
         }
-        .nav-links a:hover { background-color: rgba(255,255,255,0.3); }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
     </style>
 </head>
+
 <body>
     <header>
         <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
@@ -37,6 +51,11 @@
             <h2>Encontre o preço mais justo no Huambo!</h2>
             <p style="margin-top: 15px; font-size: 18px;">Pesquise produtos e compare preços nas melhores lojas da cidade.</p>
         </div>
+        <form action="<?= APP_URL . "/login" ?>" method="post">
+            <button>ola</button>
+        </form>
+        <?= html($title) ?>
     </main>
 </body>
+
 </html>
